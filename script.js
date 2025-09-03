@@ -129,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         addCardListeners();
         copyHotLineNumber();
+        callService();
+
 
 
     }
@@ -155,19 +157,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     const numberToCopy = btn.getAttribute("data-number");
 
                     navigator.clipboard.writeText(numberToCopy)
-                    .then(() => {
-                        copyCount++;
-                        copyEl.textContent = `📋 ${copyCount}`;
-                        btn.textContent = "Copied";
-                        btn.disabled = true;
-                        alert(`Copied ${numberToCopy} to clipboard`);
+                        .then(() => {
+                            copyCount++;
+                            copyEl.textContent = `📋 ${copyCount}`;
+                            btn.textContent = "Copied";
+                            btn.disabled = true;
+                            alert(`Copied ${numberToCopy} to clipboard`);
 
-                        // 2 seconds later
-                        setTimeout(() => {
-                            btn.textContent = "Copy";
-                            btn.disabled = false;
-                        }, 2000);
-                    })
+                            // 2 seconds later
+                            setTimeout(() => {
+                                btn.textContent = "Copy";
+                                btn.disabled = false;
+                            }, 2000);
+                        })
 
                         .catch(err => {
                             // error handle
@@ -177,6 +179,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 })
             })
+    }
+
+    //call button functionality 
+    function callService() {
+        document.querySelectorAll(".call-btn").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const name = btn.getAttribute("data-name");
+                const number = btn.getAttribute("data-number");
+
+                if (coins > 20) {
+                    coins -= 20;
+                    coinEl.textContent = `💰 ${coins}`;
+                    alert(`Calling ${name} at ${number}`);
+                    // addToHistory(serviceName, serviceNumber);
+                } else {
+                    alert("You don't have enough coins to make this call.");
+                }
+            })
+        })
     }
 
 
