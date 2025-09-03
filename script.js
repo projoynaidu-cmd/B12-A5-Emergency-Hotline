@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         addCardListeners();
         copyHotLineNumber();
         callService();
+        clearHistory();
 
 
 
@@ -192,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     coins -= 20;
                     coinEl.textContent = `💰 ${coins}`;
                     alert(`Calling ${name} at ${number}`);
-                    // addToHistory(serviceName, serviceNumber);
+                     addToHistory(name, number);
                 } else {
                     alert("You don't have enough coins to make this call.");
                 }
@@ -200,5 +201,20 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
+    // Function to add a service to the history section
+    function addToHistory (name, number){
+        const historyItem = document.createElement ("li");
+        historyItem.textContent = `${name}: ${number}`;
+        historyListEl.appendChild(historyItem);
 
+    }
+    // Clear History button functionality
+    function clearHistory() {
+       clearHistoryEl.addEventListener("click", function(){
+        historyListEl.innerHTML = "";
+       })
+        
+    }
+    
 });
+
