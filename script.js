@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardSection = document.querySelector(".card-section");
 
     // State variables
-    let coins = 150;
+    let coins = 100;
     let hearts = 0;
     let copyCount = 0;
 
