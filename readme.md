@@ -1,165 +1,66 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
+# Emergency Hotline
 
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-### 📅 No Deadline For 50 marks
+## Table of Contents
 
-### 📅 Deadline For 30 marks: Any time after 29th August.
+- [About The Project](#about-the-project)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [How to Use](#how-to-use)
+- [FAQ](#faq)
 
----
+## About The Project
 
-## ✅ Main Requirements (50 Marks)
+This project is a web application that provides a directory of emergency hotline numbers in Bangladesh. Users can view, call, and copy hotline numbers for various services like police, ambulance, fire service, etc. The application also keeps a history of the calls made.
 
-### 1. Navbar
+## Features
 
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
+-   **Emergency Hotline Directory:** Browse a list of emergency services with their hotline numbers.
+-   **One-click Calling:** Click a button to simulate a call to the selected service.
+-   **Copy Number:** Easily copy a hotline number to the clipboard.
+-   **Call History:** Keep track of the calls you've made.
+-   **Coin System:** A simple gamified system where calls cost "coins".
+-   **Favorites:** Mark your most used hotlines.
 
----
+## Technologies Used
 
-### 2. Hero Section
+-   HTML
+-   CSS
+-   JavaScript
 
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
+## Getting Started
 
----
+To get a local copy up and running, follow these simple steps.
 
-### 2. Main Section
+### Prerequisites
 
-This Section will have layout as figma
+You don't need any special software, just a modern web browser.
 
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
+### Installation
 
-### Emergency Hotline Section
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/your_username/B12-A5-Emergency-Hotline.git
+    ```
+2.  Open `index.html` in your browser.
 
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
+## How to Use
 
-### History Section
+1.  Open the `index.html` file in your web browser.
+2.  You will see a list of emergency hotline cards.
+3.  Click the "Call" button on a card to simulate a call.
+4.  Click the "Copy" button to copy the hotline number to your clipboard.
+5.  The calls you make will be added to the "Call History" section.
 
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
+## FAQ
 
----
+1.  **What is the purpose of the "coin" system?**
+    The coin system is a simple gamified feature to make the application more interactive. Each call costs a certain number of coins.
 
-### 3. Responsiveness (5 Marks)
+2.  **Is this a real application that can make calls?**
+    No, this is a front-end project for demonstration purposes. Clicking the "Call" button will simulate a call by showing an alert, but it will not make a real phone call.
 
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
-1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
-2. How do you **create and insert a new element into the DOM**?
-3. What is **Event Bubbling** and how does it work?
-4. What is **Event Delegation** in JavaScript? Why is it useful?
-5. What is the difference between **preventDefault() and stopPropagation()** methods?
-
----
-
-## 🧪 Challenges Part (10 Marks)
-
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
-
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
-
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
-
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+3.  **How can I add more hotline numbers?**
+    The hotline numbers are currently hardcoded in the application. To add more, you would need to modify the source code.
