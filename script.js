@@ -1,101 +1,101 @@
 // Wait for the DOM to be fully loaded before running the script
 document.addEventListener("DOMContentLoaded", function () {
-  // Sample Data for cards (Bangladesh Emergency & Helpline Services)
-  const emergencyServices = [
-    {
-      name: "Police",
-      englishName: "Police",
-      hotlineNumber: "999",
-      category: "Emergency",
-       icon: "/assets/police.png"
-    },
-    {
-      name: "Fire Service",
-      englishName: "Fire Service",
-      hotlineNumber: "999",
-      category: "Emergency",
-      // icon: "https://i.imgur.com/fire.png"
-    },
-    {
-      name: "Ambulance",
-      englishName: "Ambulance",
-      hotlineNumber: "999",
-      category: "Medical",
-      // icon: "https://i.imgur.com/ambulance.png"
-    },
-    {
-      name: "National Helpline",
-      englishName: "National Helpline",
-      hotlineNumber: "333",
-      category: "Government",
-      // icon: "https://i.imgur.com/helpline.png"
-    },
-    {
-      name: "Child Helpline",
-      englishName: "Child Helpline",
-      hotlineNumber: "1098",
-      category: "Social",
-      // icon: "https://i.imgur.com/child.png"
-    },
-    {
-      name: "RAB",
-      englishName: "Rapid Action Battalion",
-      hotlineNumber: "101",
-      category: "Security",
-      // icon: "https://i.imgur.com/rab.png"
-    },
-    {
-      name: "Women & Children Abuse Helpline",
-      englishName: "Women & Children Helpline",
-      hotlineNumber: "109",
-      category: "Social",
-      // icon: "https://i.imgur.com/women.png"
-    },
-    {
-      name: "Anti-Corruption Commission",
-      englishName: "Anti-Corruption Commission",
-      hotlineNumber: "106",
-      category: "Government",
-      // icon: "https://i.imgur.com/acc.png"
-    },
-    {
-      name: "Health Line",
-      englishName: "Health Service",
-      hotlineNumber: "16263",
-      category: "Medical",
-      // icon: "https://i.imgur.com/health.png"
-    },
-    {
-      name: "Suicide Prevention",
-      englishName: "Suicide Prevention",
-      hotlineNumber: "199",
-      category: "Mental Health",
-      // icon: "https://i.imgur.com/suicide.png"
-    }
-  ];
+    // Sample Data for cards (Bangladesh Emergency & Helpline Services)
+    const emergencyServices = [
+        {
+            name: "Police",
+            englishName: "Police",
+            hotlineNumber: "999",
+            category: "Emergency",
+            icon: "/assets/police.png"
+        },
+        {
+            name: "Fire Service",
+            englishName: "Fire Service",
+            hotlineNumber: "999",
+            category: "Emergency",
+            // icon: "https://i.imgur.com/fire.png"
+        },
+        {
+            name: "Ambulance",
+            englishName: "Ambulance",
+            hotlineNumber: "999",
+            category: "Medical",
+            // icon: "https://i.imgur.com/ambulance.png"
+        },
+        {
+            name: "National Helpline",
+            englishName: "National Helpline",
+            hotlineNumber: "333",
+            category: "Government",
+            // icon: "https://i.imgur.com/helpline.png"
+        },
+        {
+            name: "Child Helpline",
+            englishName: "Child Helpline",
+            hotlineNumber: "1098",
+            category: "Social",
+            // icon: "https://i.imgur.com/child.png"
+        },
+        {
+            name: "RAB",
+            englishName: "Rapid Action Battalion",
+            hotlineNumber: "101",
+            category: "Security",
+            // icon: "https://i.imgur.com/rab.png"
+        },
+        {
+            name: "Women & Children Abuse Helpline",
+            englishName: "Women & Children Helpline",
+            hotlineNumber: "109",
+            category: "Social",
+            // icon: "https://i.imgur.com/women.png"
+        },
+        {
+            name: "Anti-Corruption Commission",
+            englishName: "Anti-Corruption Commission",
+            hotlineNumber: "106",
+            category: "Government",
+            // icon: "https://i.imgur.com/acc.png"
+        },
+        {
+            name: "Health Line",
+            englishName: "Health Service",
+            hotlineNumber: "16263",
+            category: "Medical",
+            // icon: "https://i.imgur.com/health.png"
+        },
+        {
+            name: "Suicide Prevention",
+            englishName: "Suicide Prevention",
+            hotlineNumber: "199",
+            category: "Mental Health",
+            // icon: "https://i.imgur.com/suicide.png"
+        }
+    ];
 
-  // DOM elements
-  const heartEl = document.getElementById("heart-count");
-  const coinEl = document.getElementById("coin-count");
-  const copyEl = document.getElementById("copy-count");
-  const historyListEl = document.querySelector(".history-list");
-  const clearHistoryEl = document.querySelector(".clear-history-btn");
-  const cardSection = document.querySelector(".card-section");
+    // DOM elements
+    const heartEl = document.getElementById("heart-count");
+    const coinEl = document.getElementById("coin-count");
+    const copyEl = document.getElementById("copy-count");
+    const historyListEl = document.querySelector(".history-list");
+    const clearHistoryEl = document.querySelector(".clear-history-btn");
+    const cardSection = document.querySelector(".card-section");
 
-  // State variables
-  let coins = 100;
-  let hearts = 0;
-  let copyCount = 0;
+    // State variables
+    let coins = 100;
+    let hearts = 0;
+    let copyCount = 0;
 
-  // Function to render emergency service cards
-  function renderCards() {
-    cardSection.innerHTML = ""; // Clear existing cards
+    // Function to render emergency service cards
+    function renderCards() {
+        cardSection.innerHTML = ""; // Clear existing cards
 
-    emergencyServices.forEach(service => {
-      const cardEl = document.createElement("div");
-      cardEl.classList.add("card");
+        emergencyServices.forEach(service => {
+            const cardEl = document.createElement("div");
+            cardEl.classList.add("card");
 
-      cardEl.innerHTML = `
+            cardEl.innerHTML = `
         <div class="w-full flex justify-between items-center mb-3">
           <img class="w-12 h-12 object-cover rounded-full cursor-pointer" src="${service.icon}" alt="${service.name} Icon">
           <span class="heart-icon cursor-pointer text-red-500 text-xl" data-service-name="${service.name}">
@@ -125,26 +125,59 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `;
 
-      cardSection.appendChild(cardEl);
-    });
-    addCardListeners();
+            cardSection.appendChild(cardEl);
+        });
+        addCardListeners();
+        copyHotLineNumber();
 
 
-  }
+    }
 
-  renderCards();
+    renderCards();
 
-  // Function to handle card button clicks
-  function addCardListeners(){
-     document.querySelectorAll(".heart-icon")
-     .forEach(icon =>{
-      icon.addEventListener("click", () => {
-        hearts++;
-        heartEl.textContent = `❤️ ${hearts}`;
-      });
-    
-    })
-  }
+    // Function to handle card button clicks
+    function addCardListeners() {
+        document.querySelectorAll(".heart-icon")
+            .forEach(icon => {
+                icon.addEventListener("click", () => {
+                    hearts++;
+                    heartEl.textContent = `❤️ ${hearts}`;
+                });
+
+            })
+    }
+
+    // Function to copy hotline number to clipboard
+    function copyHotLineNumber() {
+        document.querySelectorAll(".copy-btn")
+            .forEach(btn => {
+                btn.addEventListener("click", function () {
+                    const numberToCopy = btn.getAttribute("data-number");
+
+                    navigator.clipboard.writeText(numberToCopy)
+                    .then(() => {
+                        copyCount++;
+                        copyEl.textContent = `📋 ${copyCount}`;
+                        btn.textContent = "Copied";
+                        btn.disabled = true;
+                        alert(`Copied ${numberToCopy} to clipboard`);
+
+                        // 2 seconds later
+                        setTimeout(() => {
+                            btn.textContent = "Copy";
+                            btn.disabled = false;
+                        }, 2000);
+                    })
+
+                        .catch(err => {
+                            // error handle
+                            console.error("❌ Failed to copy number:", err);
+                            alert("⚠️ Sorry, could not copy the number. Please try again.");
+                        })
+
+                })
+            })
+    }
 
 
 });
