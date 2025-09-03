@@ -7,7 +7,23 @@
     box-sizing: border-box;
     font-family: 'Hind Madurai', sans-serif;
 }
+.card{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
 
+.card:hover {
+    /* transform: ; */
+    /* cursor: pointer; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
+}
 
 @media (max-width: 768px) {
     .main-content {
