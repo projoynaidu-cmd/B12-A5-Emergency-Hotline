@@ -7,70 +7,70 @@ document.addEventListener("DOMContentLoaded", function () {
             englishName: "Police",
             hotlineNumber: "999",
             category: "Emergency",
-            icon: "/assets/police.png"
+            icon: "assets/police.png"
         },
         {
             name: "Fire Service",
             englishName: "Fire Service",
             hotlineNumber: "999",
             category: "Emergency",
-            // icon: "https://i.imgur.com/fire.png"
+             icon: "assets/fire-service.png"
         },
         {
             name: "Ambulance",
             englishName: "Ambulance",
             hotlineNumber: "999",
             category: "Medical",
-            // icon: "https://i.imgur.com/ambulance.png"
+            icon: "assets/ambulance.png"
         },
         {
             name: "National Helpline",
             englishName: "National Helpline",
             hotlineNumber: "333",
             category: "Government",
-            // icon: "https://i.imgur.com/helpline.png"
+            icon: "assets/help-line.png"
         },
         {
             name: "Child Helpline",
             englishName: "Child Helpline",
             hotlineNumber: "1098",
             category: "Social",
-            // icon: "https://i.imgur.com/child.png"
+            icon: "assets/child.png"
         },
         {
             name: "RAB",
             englishName: "Rapid Action Battalion",
             hotlineNumber: "101",
             category: "Security",
-            // icon: "https://i.imgur.com/rab.png"
+            icon: "assets/RAB.png"
         },
         {
             name: "Women & Children Abuse Helpline",
             englishName: "Women & Children Helpline",
             hotlineNumber: "109",
             category: "Social",
-            // icon: "https://i.imgur.com/women.png"
+            icon: "assets/women.png"
         },
         {
             name: "Anti-Corruption Commission",
             englishName: "Anti-Corruption Commission",
             hotlineNumber: "106",
             category: "Government",
-            // icon: "https://i.imgur.com/acc.png"
+             icon: "assets/bribe.png"
         },
         {
             name: "Health Line",
             englishName: "Health Service",
             hotlineNumber: "16263",
             category: "Medical",
-            // icon: "https://i.imgur.com/health.png"
+            icon: "assets/Healthline.png"
         },
         {
             name: "Suicide Prevention",
             englishName: "Suicide Prevention",
             hotlineNumber: "199",
             category: "Mental Health",
-            // icon: "https://i.imgur.com/suicide.png"
+             icon: "assets/suicide.png"
         }
     ];
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardSection = document.querySelector(".card-section");
 
     // State variables
-    let coins = 100;
+    let coins = 150;
     let hearts = 0;
     let copyCount = 0;
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             cardEl.innerHTML = `
         <div class="w-full flex justify-between items-center mb-3">
-          <img class="w-12 h-12 object-cover rounded-full cursor-pointer" src="${service.icon}" alt="${service.name} Icon">
+          <img class="w-12 h-12 object-contain rounded-full cursor-pointer" src="${service.icon}" alt="${service.name} Icon">
           <span class="heart-icon cursor-pointer text-red-500 text-xl" data-service-name="${service.name}">
             <i class="fa-regular fa-heart"></i>
           </span>
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .forEach(icon => {
                 icon.addEventListener("click", () => {
                     hearts++;
-                    heartEl.textContent = `❤️ ${hearts}`;
+                    heartEl.innerHTML = `<i class="fa-regular fa-heart text-red-500"></i> ${hearts}`;
                 });
 
             })

@@ -26,7 +26,7 @@
   <body class=" ">
     <!-- Navbar -->
     <header
-      class="navbar flex justify-between w-full items-center py-2 px-[60px] bg-gray-200"
+      class="navbar flex flex-col md:flex-row justify-between w-full items-center gap-4 py-2 px-4 md:px-[60px] bg-gray-200"
     >
       <div class="logo-container flex items-center justify-center">
         <div>
@@ -34,17 +34,15 @@
         </div>
         <div>
           <h1 class="logo-text text-2xl font-bold">
-            Emergency <br class="line-break" /><span class="text-red-600"
-              >Hotline</span
-            >
+            Emergency
+            <br class="hidden md:inline" />
+            <span class="text-red-600">Hotline</span>
           </h1>
         </div>
       </div>
       <div class="nav-stats flex items-center gap-4 cursor-pointer">
-        <span
-          id="heart-count"
-          class=" rounded-full px-8 py-3 bg-[#ecfff0]"
-          >❤️ 0</span
+        <span id="heart-count" class="rounded-full px-8 py-3 bg-[#ecfff0]">
+          <i class="fa-regular fa-heart text-red-500"></i> 0</span
         >
         <span
           id="coin-count"
@@ -62,7 +60,7 @@
     <main>
       <!-- Hero -->
       <section
-        class="hero-section flex flex-col items-center justify-center text-center bg-[linear-gradient(90deg,rgba(1,49,35,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] h-[50vh]"
+        class="hero-section px-4 flex flex-col items-center justify-center text-center bg-[linear-gradient(90deg,rgba(1,49,35,1),rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] h-[50vh] md:h-[60vh]"
       >
         <img
           src="/assets/logo.png"
@@ -78,21 +76,32 @@
         </p>
       </section>
       <!-- Call History -->
-      <section class="card-history-container p-4 flex flex-rows gap-4 bg-[#f5fff6] w-full">
-        <div class="card-section grid grid-cols-2 md:grid-cols-3 p-4 gap-3 mb-6 bg-red-300"
+      <section
+        class="card-history-container p-4 flex flex-col md:flex-row gap-6 bg-[#f5fff6] w-full"
+      >
+        <div
+          class="card-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-4 gap-3 mb-6 flex-1"
         >
-      </div>
+          <!-- dynamical cards  -->
+        </div>
 
-        <div class="history-section ">
-          <div class="history-header mb-4 bg-red-300 ">
-            <h3 class="history-title">
+        <div class="history-section bg-white p-4 rounded-md">
+          <div
+            class="history-header mb-4 flex justify-between items-center gap-4 mt-3"
+          >
+            <h3 class="history-title text-lg font-bold">
               <i class="fa-solid fa-history"></i>
-              <!-- <img src="https://i.imgur.com/history-icon.png" alt="History Icon"> Call History -->
               Call History
             </h3>
-            <button class="clear-history-btn">Clear History</button>
+            <button
+              class="clear-history-btn bg-red-500 text-white px-4 py-2 rounded-md"
+            >
+              Clear History
+            </button>
           </div>
-          <ul class="history-list"></ul>
+          <ul class="history-list mt-4 flex flex-col gap-2">
+            <!-- Call history items will be added dynamically -->
+          </ul>
         </div>
       </section>
     </main>
